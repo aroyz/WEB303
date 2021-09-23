@@ -95,3 +95,14 @@ footer {
 	background: url('images/footer.gif');
 	clear: both;
 }
+
+/* Added set height to imported divs for animating */
+#solution #vprospect {
+	height: 401px;
+}
+#solution #vconvert {
+	height: 601px;
+} 
+#solution #vretain {
+	height: 351px;
+}

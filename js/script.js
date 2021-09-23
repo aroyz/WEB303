@@ -9,7 +9,7 @@ $(document).ready(function() {
 		$("#solution").load("convert.html #vconvert").hide().slideDown(1000);
 	});
 	$("a#vretain").click(function() {
-		$("#solution").load("retain.html #vretain").slideDown(1000);
+		$("#solution").load("retain.html #vretain").hide().slideDown(1000);
 	});
 });
 
