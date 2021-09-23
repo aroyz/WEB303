@@ -3,13 +3,13 @@
 
 $(document).ready(function() {
 	$("a#vprospect").click(function() {
-		$("#solution").load("prospect.html #vprospect");
+		$("#solution").empty().load("prospect.html #vprospect");
 	});
 	$("#vconvert").click(function() {
-		$("#solution").load("convert.html #vprospect");
+		$("#solution").empty().load("convert.html #vprospect");
 	});
 	$("#vretain").click(function() {
-		$("#solution").load("retain.html #vprospect");
+		$("#solution").empty().load("retain.html #vprospect");
 	});
 });
 
