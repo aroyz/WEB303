@@ -5,11 +5,11 @@ $(document).ready(function() {
 	$("a#vprospect").click(function() {
 		$("#solution").empty().load("prospect.html #vprospect");
 	});
-	$("#vconvert").click(function() {
-		$("#solution").empty().load("convert.html #vprospect");
+	$("a#vconvert").click(function() {
+		$("#solution").empty().load("convert.html #vconvert");
 	});
-	$("#vretain").click(function() {
-		$("#solution").empty().load("retain.html #vprospect");
+	$("a#vretain").click(function() {
+		$("#solution").empty().load("retain.html #vretain");
 	});
 });
 
