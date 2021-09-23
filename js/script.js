@@ -6,10 +6,10 @@ $(document).ready(function() {
 		$("#solution").load("prospect.html #vprospect");
 	});
 	$("#vconvert").click(function() {
-		$("#solution").load("prospect.html #vprospect");
+		$("#solution").load("convert.html #vprospect");
 	});
 	$("#vretain").click(function() {
-		$("#solution").load("prospect.html #vprospect");
+		$("#solution").load("retain.html #vprospect");
 	});
 });
 
