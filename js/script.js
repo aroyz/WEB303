@@ -5,19 +5,19 @@ $(document).ready(function() {
 
 	$("a#vprospect").click(function() {
 		$("#solution").load("prospect.html #vprospect", function() {
-			$(this).hide().css("height", "401px").slideDown(400);
+			$(this).css("height", "401px");
 		});
 	});
 
 	$("a#vconvert").click(function() {
 		$("#solution").load("convert.html #vconvert", function() {
-			$(this).hide().css("height", "601px").slideDown(400);
+			$(this).css("height", "601px");
 		});
 	});
 
 	$("a#vretain").click(function() {
 		$("#solution").load("retain.html #vretain", function() {
-			$(this).hide().css("height", "351px").slideDown(400);
+			$(this).css("height", "351px");
 		});
 	});
 	
