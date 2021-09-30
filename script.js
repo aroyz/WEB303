@@ -16,7 +16,13 @@ $(document).ready(function() {
 		});
 	}
 	const ajaxFunction = function() {
-		
+		let xhr = new XMLHttpRequest();
+		xhr.open("GET", "team.json", true);
+		xhr.onreadystatechange = function() {
+			let team = JSON.parse(xhr.responseText);
+			console.log(team);
+		}
+		xhr.send();
 	}
-	jsonFunction();
+	ajaxFunction();
 });
