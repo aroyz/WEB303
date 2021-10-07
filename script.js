@@ -1,23 +1,57 @@
 /*
     Assignment 4
-    {Your name here}
+    {Abbey Roy}
 */
 
 $(document).ready(function(){
     // your code here
-	navigator.geolocation.getCurrentPosition(
-		function(position) {
-			$("#youarehere").html(
-				`<div id="current-location">
-					<p>Your current location is:</br>
-					Latitude: ${position.coords.latitude}</br>
-					Longitude: ${position.coords.longitude}</p>
-				</div>`
-			);
-		},
-		function() {
-		}
-	);
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(
+			function(position) {
+				$("#youarehere").html(
+					`<div id="current-location">
+						<p>Your current location is:</br>
+						Latitude: ${position.coords.latitude}</br>
+						Longitude: ${position.coords.longitude}</p>
+					</div>`
+				);
+				if (window.localStorage) {
+					if (localStorage.getItem('latitude')) {
+						$("#youarehere").append(
+							`<div id="last-location">
+								<p>Your last stored location was:</br>
+								Latitude: ${localStorage.getItem('latitude')}</br>
+								Longitude: ${localStorage.getItem('longitude')}</p>
+								<p>You have traveled ${calcDistance(localStorage.getItem('latitude'), localStorage.getItem('longitude'), position.coords.latitude, position.coords.longitude)} metres</p>
+							</div>`
+						);
+					}
+					else {
+						$("#youarehere").append(
+							`<p>Welcome! This is the first time you've visited this page.</p>`
+						);
+					}
+					localStorage.setItem('latitude', `${position.coords.latitude}`);
+					localStorage.setItem('longitude', `${position.coords.longitude}`);
+				}
+				else {
+					$("#youarehere").html(
+						`<p>Can't retrieve last location because local storage is not available. Please try again.</p>`
+					);
+				}
+			},
+			function() {
+				$("#youarehere").html(
+					`<p>Unable to retrieve geolocation. Please try again.</p>`
+				);
+			}
+		);
+	}
+	else {
+		$("#youarehere").html(
+			`<p>Geolocation is not available. Please try again.</p>`
+		);
+	}
 
     // function to calculate the distance in metres between two lat/long pairs on Earth
     // Haversine formula - https://en.wikipedia.org/wiki/Haversine_formula
