@@ -347,3 +347,41 @@ template {
 [hidden] {
     display: none;
 }
+
+
+/* my styles */
+.accordion-wrapper {
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto 0;
+}
+#accordion-wrapper-1 .panel-header {
+    background-color: #f6d9de;
+}
+#accordion-wrapper-2 .panel-header {
+    background-color: #dbefdb;
+}
+
+.panel-header {
+    display: block;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: sans-serif;
+    padding: 10px 15px;
+    border-top: 1px solid black;
+}
+#accordion-wrapper-1 > div:last-of-type {
+    border-bottom: 1px solid black;
+}
+.panel-content {
+    display: none;
+}
+.panel-content p {
+    font-size: 18px;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px 15px;
+}
+.active {
+    display: block;
+}
