@@ -11,7 +11,7 @@ $(function () {
         modal.open({
             content: $content,
             width: 1200,
-            height: 675
+            height: 697
         });
     });;
 });
