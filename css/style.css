@@ -1,0 +1,22 @@
+.modal {
+    position: absolute;
+    z-index: 1000;
+    background-color: black;
+    padding: 16px;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+.shim {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    background-color: rgba(0,0,0,0.8);
+}
+
+footer {
+    text-align: center;
+    padding: 40px 0;
+}

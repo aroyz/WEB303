@@ -1,0 +1,35 @@
+#photo-viewer{
+    display: none;
+}
+#photo-viewer .photo-frame.is-loading:after {
+    content: url('../img/load.gif');
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+}
+#photo-viewer .photo-frame{
+    position: relative;
+    display: block;
+    width: 1200px;
+    height: 675px;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+    border: 4px solid black;
+    overflow: hidden;
+}
+#photo-viewer .photo-frame img {
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+}
+#photo-viewer .thumb img{
+    width: 128px;
+    height: 72px;
+}
+
+.thumb.active img {
+    box-sizing: border-box;
+    border: 4px solid black;
+}
