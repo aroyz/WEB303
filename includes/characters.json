@@ -1,0 +1,43 @@
+{
+    "characters": [
+        {
+            "name": "Frodo Baggins",
+            "race": "Hobbit",
+            "birthYear": "TA 2968",
+            "actor": "Elijah Wood"
+        },
+        {
+            "name": "Samwise Gamgee",
+            "race": "Hobbit",
+            "birthYear": "TA 2980",
+            "actor": "Sean Astin"
+        },
+        {
+            "name": "Meriadoc Brandybuck",
+            "race": "Hobbit",
+            "birthYear": "TA 2982",
+            "actor": "Dominic Monaghan"
+        },
+        {
+            "name": "Peregrin Took",
+            "race": "Hobbit",
+            "birthYear": "TA 2990",
+            "actor": "Billy Boyd"
+        },
+        {
+            "name": "Gimli",
+            "race": "Dwarf",
+            "birthYear": "TA 2879",
+            "actor": "John Rhys-Davies"
+        },
+        {
+            "name": "Gandalf",
+            "race": "Maiar",
+            "birthYear": "Before the Creation of Arda",
+            "actor": "Ian McKellen"
+        },
+        {
+            
+        }
+    ]
+}
