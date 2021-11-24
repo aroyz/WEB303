@@ -3,41 +3,74 @@
         {
             "name": "Frodo Baggins",
             "race": "Hobbit",
-            "birthYear": "TA 2968",
+            "culture": "Shire-Hobbits",
             "actor": "Elijah Wood"
         },
         {
             "name": "Samwise Gamgee",
             "race": "Hobbit",
-            "birthYear": "TA 2980",
+            "culture": "Shire-Hobbits",
             "actor": "Sean Astin"
         },
         {
             "name": "Meriadoc Brandybuck",
             "race": "Hobbit",
-            "birthYear": "TA 2982",
+            "culture": "Shire-Hobbits",
             "actor": "Dominic Monaghan"
         },
         {
             "name": "Peregrin Took",
             "race": "Hobbit",
-            "birthYear": "TA 2990",
+            "culture": "Shire-Hobbits",
             "actor": "Billy Boyd"
         },
         {
             "name": "Gimli",
             "race": "Dwarf",
-            "birthYear": "TA 2879",
+            "culture": "Durin's Folk",
             "actor": "John Rhys-Davies"
         },
         {
             "name": "Gandalf",
             "race": "Maiar",
-            "birthYear": "Before the Creation of Arda",
+            "culture": "Istari",
             "actor": "Ian McKellen"
         },
         {
-            
+            "name": "Legolas Greenleaf",
+            "race": "Elf",
+            "culture": "Elves of Mirkwood",
+            "actor": "Orlando Bloom"
+        },
+        {
+            "name": "Aragorn",
+            "race": "Man",
+            "culture": "Dúnedain of Arnor",
+            "actor": "Viggo Mortensen"
+        },
+        {
+            "name": "Boromir",
+            "race": "Man",
+            "culture": "Men of Gondor",
+            "actor": "Sean Bean"
+        },
+        {
+            "name": "Eowyn",
+            "race": "Man",
+            "culture": "Rohirrim",
+            "actor": "Miranda Otto"
+        },
+        {
+            "name": "Saruman",
+            "race": "Maiar",
+            "culture": "Istari",
+            "actor": "Christopher Lee"
+        },
+        {
+            "name": "Theoden",
+            "race": "Man",
+            "culture": "Rohittim",
+            "actor": "Bernard Hill"
         }
     ]
 }
