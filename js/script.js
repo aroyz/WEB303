@@ -1,7 +1,8 @@
 $(document).ready(function () {
     const $searchInput = $("#search-input");
-    const $characterTable = $("#character-table");
+    const $characterTableBody = $("#character-table tbody");
     const $buttonsDiv = $("#sort-buttons");
+    const $tableHeaders = $("#characters-table th");
     const $rows = [];
 
     const dataProcessingFunction = function (characters) {
@@ -26,7 +27,7 @@ $(document).ready(function () {
     }
     const insertRowsFunction = function () {
         $.each($rows, function () {
-            $characterTable.append(this);
+            $characterTableBody.append(this);
         });
     }
     const createButtons = function () {
@@ -62,6 +63,22 @@ $(document).ready(function () {
             });
         }
     }
+    const compareFunctions = {
+        chars: function (a, b) {
+            if (a < b) {
+                return -1;
+            }
+            else {
+                return (a > b) ? 1 : 0;
+            }
+        },
+        dates: function (a, b) {
+            a = new Date(a);
+            b = new Date(b);
+
+            return a - b;
+        }
+    }
 
     $.ajax({
         url: 'includes/characters.json',
@@ -69,8 +86,8 @@ $(document).ready(function () {
         dataType: 'json',
         cache: 'false',
         error: function(xhr) {
-            $characterTable.append(
-                `<tr><td>Data failed to load from server.</td></tr>`
+            $characterTableBody.append(
+                `<tr><td colspan="5">Data failed to load from server.</td></tr>`
             );
             alert(`An error ocured while retrieving data. Error code ${xhr.status}: ${xhr.statusText}`);
         },
@@ -84,6 +101,26 @@ $(document).ready(function () {
         $searchInput.on('input', filterFunction);
     }
     else {
-
+        $searchInput.on('keyup', filterFunction);
     }
+
+    $tableHeaders.on('click', function () {
+        let $header = $(this);
+        let order = $header.data('sort');
+        let column;
+
+        if ($header.is('.ascending') || $header.is('.descending')) {
+            
+        }
+        else {
+            $header.addClass('ascending');
+            $header.siblings().removeClass('ascending descending');
+            if (compare.hasOwnProperty(order)) {
+                column = $tableHeaders.index(this);
+
+                $rows.sort(function (a, b) {
+                });
+            }
+        }
+    });
 });

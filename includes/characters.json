@@ -4,73 +4,85 @@
             "name": "Frodo Baggins",
             "race": "Hobbit",
             "culture": "Shire-Hobbits",
-            "actor": "Elijah Wood"
+            "actor": "Elijah Wood",
+            "actorBirthday": "1981-01-28"
         },
         {
             "name": "Samwise Gamgee",
             "race": "Hobbit",
             "culture": "Shire-Hobbits",
-            "actor": "Sean Astin"
+            "actor": "Sean Astin",
+            "actorBirthday": "1971-02-25"
         },
         {
             "name": "Meriadoc Brandybuck",
             "race": "Hobbit",
             "culture": "Shire-Hobbits",
-            "actor": "Dominic Monaghan"
+            "actor": "Dominic Monaghan",
+            "actorBirthday": "1976-12-08"
         },
         {
             "name": "Peregrin Took",
             "race": "Hobbit",
             "culture": "Shire-Hobbits",
-            "actor": "Billy Boyd"
+            "actor": "Billy Boyd",
+            "actorBirthday": "1968-07-28"
         },
         {
             "name": "Gimli",
             "race": "Dwarf",
             "culture": "Durin's Folk",
-            "actor": "John Rhys-Davies"
+            "actor": "John Rhys-Davies",
+            "actorBirthday": "1944-05-05"
         },
         {
             "name": "Gandalf",
             "race": "Maiar",
             "culture": "Istari",
-            "actor": "Ian McKellen"
+            "actor": "Ian McKellen",
+            "actorBirthday": "1939-05-25"
         },
         {
             "name": "Legolas Greenleaf",
             "race": "Elf",
             "culture": "Elves of Mirkwood",
-            "actor": "Orlando Bloom"
+            "actor": "Orlando Bloom",
+            "actorBirthday": "1977-01-13"
         },
         {
             "name": "Aragorn",
             "race": "Man",
             "culture": "Dúnedain of Arnor",
-            "actor": "Viggo Mortensen"
+            "actor": "Viggo Mortensen",
+            "actorBirthday": "1958-10-20"
         },
         {
             "name": "Boromir",
             "race": "Man",
             "culture": "Men of Gondor",
-            "actor": "Sean Bean"
+            "actor": "Sean Bean",
+            "actorBirthday": "1959-04-17"
         },
         {
             "name": "Eowyn",
             "race": "Man",
             "culture": "Rohirrim",
-            "actor": "Miranda Otto"
+            "actor": "Miranda Otto",
+            "actorBirthday": "1967-12-15"
         },
         {
             "name": "Saruman",
             "race": "Maiar",
             "culture": "Istari",
-            "actor": "Christopher Lee"
+            "actor": "Christopher Lee",
+            "actorBirthday": "1922-05-27"
         },
         {
             "name": "Theoden",
             "race": "Man",
             "culture": "Rohirrim",
-            "actor": "Bernard Hill"
+            "actor": "Bernard Hill",
+            "actorBirthday": "1944-12-17"
         }
     ]
 }
