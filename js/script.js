@@ -2,8 +2,9 @@ $(document).ready(function () {
     const $searchInput = $("#search-input");
     const $characterTableBody = $("#character-table tbody");
     const $buttonsDiv = $("#sort-buttons");
-    const $tableHeaders = $("#characters-table th");
+    const $tableHeaders = $("#character-table th a");
     const $rows = [];
+    const $sortRows = [];
 
     const dataProcessingFunction = function (characters) {
         $.each(characters, function (index, character) {
@@ -21,6 +22,7 @@ $(document).ready(function () {
             });
 
             $rows.push($newRow);
+            $sortRows.push($newRow);
         });
         insertRowsFunction();
         createButtons();
@@ -104,22 +106,34 @@ $(document).ready(function () {
         $searchInput.on('keyup', filterFunction);
     }
 
-    $tableHeaders.on('click', function () {
-        let $header = $(this);
+    $tableHeaders.on('click', function (event) {
+        event.preventDefault();
+
+        let $header = $(this).parent();
         let order = $header.data('sort');
         let column;
 
-        if ($header.is('.ascending') || $header.is('.descending')) {
-            
+        if ($header.is('.ascending')) {
+            $header.toggleClass('ascending descending');
+            $characterTableBody.append($sortRows.reverse());
+        }
+        else if ($header.is('.descending')) {
+            $header.removeClass('ascending descending');
+            $characterTableBody.append($rows);
         }
         else {
             $header.addClass('ascending');
             $header.siblings().removeClass('ascending descending');
-            if (compare.hasOwnProperty(order)) {
+            if (compareFunctions.hasOwnProperty(order)) {
                 column = $tableHeaders.index(this);
 
-                $rows.sort(function (a, b) {
+                $sortRows.sort(function (a, b) {
+                    a = $(a).find('td').eq(column).text();
+                    b = $(b).find('td').eq(column).text();
+                    return compareFunctions[order](a, b);
                 });
+                console.log($sortRows);
+                $characterTableBody.append($sortRows);
             }
         }
     });
