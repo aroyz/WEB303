@@ -244,6 +244,7 @@ $(document).ready(function () {
         {name: 'Zambia', code: 'ZM'}, 
         {name: 'Zimbabwe', code: 'ZW'} 
     ];
+    const $form = $('form');
     const $username = $('input#username');
     const $password = $('input#password');
     const $confirmPass = $('input#confirmPass');
@@ -292,7 +293,23 @@ $(document).ready(function () {
         else {
             validationArr.countryValid = false;
         }
-    })
+    });
+    $termsOfService.on('change', function () {
+        if ($termsOfService.val == 'agree') {
+            validationArr.termsOfServiceValid = true;
+        }
+        else {
+            validationArr.termsOfServiceValid = false;
+        }
+    });
+    $form.on('change', function () {
+        if (validationArr.each(v => v === true)) {
+            $submit.disabled = false;
+        }
+        else {
+            $submit.disabled = true;
+        }
+    });
 });
 
 
