@@ -8,7 +8,7 @@
         <title>Assignment 10</title>
     </head>
     <body>
-        <form action="" method="POST">
+        <form action="" method="POST" id="register-form">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" placeholder="Username" /><br /><br />
 
@@ -20,10 +20,11 @@
 
             <label for="country">Select Your Country:</label>
             <select id="country" name="country">
+                <option value="choose" selected="selected">Select your country.</option>
             </select><br /><br />
 
             <input type="checkbox" id="termsOfService" name="termsOfService" value="agree" />
-            <label for="checkbox">I agree to the Terms of Service</label>
+            <label for="termsOfService">I agree to the Terms of Service</label>
 
             <input type="submit" id="submit" value="Register" />
         </form>
