@@ -1,3 +1,27 @@
-.disabled {
-    background-color: red;
+body {
+    text-align: center;
+}
+h1 {
+    margin-top: 50px;
+}
+#register-form {
+    display: inline-block;
+    padding: 50px;
+    background-color: #bdbdbd;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+#register-form > label:not(:last-of-type) {
+    display: inline-block;
+    text-align: right;
+    width: 150px;
+}
+input:not(:nth-last-of-type(2)):not(:last-of-type), select {
+    box-sizing: border-box;
+    padding: 5px 10px;
+    width: 350px;
+}
+input[type="submit"] {
+    padding: 5px 10px;
 }

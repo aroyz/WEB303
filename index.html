@@ -8,23 +8,24 @@
         <title>Assignment 10</title>
     </head>
     <body>
-        <form action="" method="POST" id="register-form">
-            <label for="username">Username:</label>
+        <h1>Register</h1>
+        <form action="/register" method="POST" id="register-form">
+            <label for="username">Username &nbsp;</label>
             <input type="text" id="username" name="username" placeholder="Username" /><br /><br />
 
-            <label for="password">Password:</label>
+            <label for="password">Password &nbsp;</label>
             <input type="password" id="password" name="password" placeholder="Password" /><br /><br />
 
-            <label for="confirmPass">Confirm Password:</label>
+            <label for="confirmPass">Confirm Password &nbsp;</label>
             <input type="password" id="confirmPass" name="confirmPass" placeholder="Confirm Password" /><br /><br />
 
-            <label for="country">Select Your Country:</label>
+            <label for="country">Select Your Country &nbsp;</label>
             <select id="country" name="country">
                 <option value="choose" selected="selected">Select your country.</option>
             </select><br /><br />
 
             <input type="checkbox" id="termsOfService" name="termsOfService" value="agree" />
-            <label for="termsOfService">I agree to the Terms of Service</label>
+            <label for="termsOfService">I agree to the Terms of Service</label><br /><br />
 
             <input type="submit" id="submit" value="Register" />
         </form>

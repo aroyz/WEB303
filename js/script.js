@@ -245,82 +245,13 @@ $(document).ready(function () {
         {name: 'Zimbabwe', code: 'ZW'}
     ];
     const submit = document.getElementById('submit');
-    // const form = document.getElementById('register-form');
-    // const username = document.getElementById('username');
-    // const password = document.getElementById('password');
-    // const confirmPass = document.getElementById('confirmPass');
-    // const country = document.getElementById('country');
-    // const termsOfService = document.getElementById('termsOfService');
-    // const validationArr = {
-    //     usernameValid: false,
-    //     passwordValid: false,
-    //     confirmPassValid: false,
-    //     countryValid: false,
-    //     termsOfServiceValid: false,
-    // }
-    // const validateFunctions = {
-    //     username: function () {
-    //         if (username.value.length >= 0) {
-    //             validationArr.usernameValid = true;
-    //         }
-    //         else {
-    //             validationArr.usernameValid = false;
-    //         }
-    //         console.log(validationArr);
-    //     },
-    //     password: function () {
-    //         if (password.value.length >= 10) {
-    //             validationArr.passwordValid = true;
-    //         }
-    //         else {
-    //             validationArr.passwordValid = false;
-    //         }
-    //         console.log(validationArr);
-    //     },
-    //     confirmPass: function () {
-    //         if (confirmPass.value == password.value) {
-    //             validationArr.confirmPassValid = true;
-    //         }
-    //         else {
-    //             validationArr.confirmPassValid = false;
-    //         }
-    //         console.log(validationArr);
-    //     },
-    //     country: function () {
-    //         if (country.value) {
-    //             validationArr.countryValid = true;
-    //         }
-    //         else {
-    //             validationArr.countryValid = false;
-    //         }
-    //         console.log(validationArr);
-    //     },
-    //     termsOfService: function () {
-    //         if (termsOfService.checked) {
-    //             validationArr.termsOfServiceValid = true;
-    //         }
-    //         else {
-    //             validationArr.termsOfServiceValid = false;
-    //         }
-    //         console.log(validationArr);
-    //     },
-    //     form: function () {
-    //         if (Object.values(validationArr).every(v => v === true)) {
-    //             submit.disabled = false;
-    //         }
-    //         else {
-    //             submit.disabled = true;
-    //         }
-    //     }
-    // }
-
     const registerForm = [
         {
             element: document.getElementById('username'),
             validateFunction: function () {
-                if (this.element.value.length >= 0) { this.isValid = true; }
+                if (this.element.value.length > 0) { this.isValid = true; }
                 else { this.isValid = false; }
-                console.log(registerForm.slice(0,5).every(v => v.isValid));
+                console.log(registerForm.slice(0,5).map(v => v.isValid));
             },
             isValid: false
         },
@@ -329,7 +260,8 @@ $(document).ready(function () {
             validateFunction: function () {
                 if (this.element.value.length >= 10) { this.isValid = true; }
                 else { this.isValid = false; }
-                console.log(registerForm.slice(0,5).every(v => v.isValid));
+                (this.element.value == registerForm[2].element.value) ? registerForm[2].isValid = true : registerForm[2].isValid = false;
+                console.log(registerForm.slice(0,5).map(v => v.isValid));
             },
             isValid: false
         },
@@ -338,7 +270,7 @@ $(document).ready(function () {
             validateFunction: function () {
                 if (this.element.value == registerForm[1].element.value) { this.isValid = true; }
                 else { this.isValid = false; }
-                console.log(registerForm.slice(0,5).every(v => v.isValid));
+                console.log(registerForm.slice(0,5).map(v => v.isValid));
             },
             isValid: false
         },
@@ -347,7 +279,7 @@ $(document).ready(function () {
             validateFunction: function () {
                 if (this.element.value === "choose") { this.isValid = false; }
                 else { this.isValid = true; }
-                console.log(registerForm.slice(0,5).every(v => v.isValid));
+                console.log(registerForm.slice(0,5).map(v => v.isValid));
             },
             isValid: false
         },
@@ -356,7 +288,7 @@ $(document).ready(function () {
             validateFunction: function () {
                 if (this.element.checked) { this.isValid = true; }
                 else { this.isValid = false; }
-                console.log(registerForm.slice(0,5).every(v => v.isValid));
+                console.log(registerForm.slice(0,5).map(v => v.isValid));
             },
             isValid: false
         },
@@ -370,14 +302,14 @@ $(document).ready(function () {
     ]
 
     function addEventFunction () {
-        registerForm.forEach(function () {
-            this.element.addEventListener('input', this.validateFunction());
+        registerForm.forEach(function (el, i) {
+            el.element.addEventListener('input', el.validateFunction.bind(registerForm[i]));
         });
     }
     function generateCountrySelectFunction () {
-        countries.forEach(function () {
-            let $countryOption = $(`<option value="${this.code}">${this.name}</option>`);
-            registerForm[3].element.appendChild($countryOption);
+        countries.forEach(function (country) {
+            let $countryOption = $(`<option value="${country.code}">${country.name}</option>`);
+            registerForm[3].element.appendChild($countryOption[0]);
         });
     }
     function init () {
@@ -388,7 +320,3 @@ $(document).ready(function () {
 
     init();
 });
-
-
-
-
